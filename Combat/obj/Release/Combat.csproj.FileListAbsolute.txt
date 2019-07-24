@@ -1,0 +1,7 @@
+C:\Users\incen\Documents\Visual Studio 2017\Projects\Combat\Combat\bin\Release\Combat.exe.config
+C:\Users\incen\Documents\Visual Studio 2017\Projects\Combat\Combat\bin\Release\Combat.exe
+C:\Users\incen\Documents\Visual Studio 2017\Projects\Combat\Combat\bin\Release\Combat.pdb
+C:\Users\incen\Documents\Visual Studio 2017\Projects\Combat\Combat\obj\Release\Combat.csproj.CoreCompileInputs.cache
+C:\Users\incen\Documents\Visual Studio 2017\Projects\Combat\Combat\obj\Release\Combat.exe
+C:\Users\incen\Documents\Visual Studio 2017\Projects\Combat\Combat\obj\Release\Combat.pdb
+C:\Users\incen\Documents\Visual Studio 2017\Projects\Combat\Combat\obj\Release\Combat.csprojAssemblyReference.cache
