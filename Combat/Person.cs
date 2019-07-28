@@ -52,10 +52,11 @@ namespace People
 
         public void AutoAction()
         {
-            int random = (new Random()).Next(0, Actions.Count);
+            int random = Program.random.Next(0, Actions.Count);
             try
             {
-                nextAction = Actions[Actions.Keys.ToList()[random]];
+                string action = Actions.Keys.ToList()[random];
+                nextAction = Actions[action];
             }catch
             {
                 nextAction = new Combat.Action("Did Bugger All for some reason?", 19f, Combat.Action.TYPE_DEFENSE, 0);
@@ -84,7 +85,7 @@ namespace People
         {
             if (nextAction.type == Combat.Action.TYPE_ATTACK)
             {
-                float random = (float)(new Random()).Next(85, 100) / 100f;
+                float random = (float)Program.random.Next(85, 100) / 100f;
                 float damage = (nextAction.modifier / Opponent.getDefense()) * baseDamage * multiplier * random;
                 Opponent.health -= damage;
 
@@ -111,26 +112,25 @@ namespace NameGenerator
     {
         public static Names RandomRace()
         {
-            Random random = new Random(DateTime.Now.Second);
             List<Names> Races = new List<Names>();
             Races.Add(new Human());
-            if (Races.Count > 1) return Races[random.Next(0, Races.Count - 1)];
+            if (Races.Count > 1) return Races[Program.random.Next(0, Races.Count - 1)];
             return Races[0];
         }
-        Random random = new Random(DateTime.Now.Second);
+        
         public bool Gender;
         protected string[] FirstNamesMale;
         protected string[] FirstNamesFemale;
         protected string[] Surnames;
         public void RandomGender()
         {
-            Gender = random.Next(0, 1) == 0 ? false : true;
+            Gender = Program.random.Next(0, 1) == 0 ? false : true;
         }
         public string RandomName()
         {
             string[] forenames = Gender ? FirstNamesMale : FirstNamesFemale;
-            string Forename = forenames[random.Next(0, forenames.Length - 1)];
-            string Surname = Surnames[random.Next(0, Surnames.Length - 1)];
+            string Forename = forenames[Program.random.Next(0, forenames.Length - 1)];
+            string Surname = Surnames[Program.random.Next(0, Surnames.Length - 1)];
             return $"{Forename} {Surname}";
         }
         public string RandomGenerate()

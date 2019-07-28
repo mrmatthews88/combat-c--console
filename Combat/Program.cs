@@ -30,6 +30,7 @@ namespace Combat
         private const int RESTORE = 9;
         #endregion 
 
+        public static Random random = new Random(DateTime.Now.Second);
         static Stats PlayerStats = new Stats(50, 1, 110, 6, true);
         static Stats NpcStats = new Stats(1, 7, 110, 6, true);
 
@@ -106,8 +107,13 @@ namespace Combat
             GameFrame.borderColor = ConsoleColor.DarkYellow;
             GameFrame.refresh();
 
+            GameFrame.WriteLine("Please type your name then press enter");
+            string name = Console.ReadLine();
+            GameFrame.Clear();
+
             MenuPlayerClass PlayerMenu = new MenuPlayerClass(1,4,100,100);
             player = PlayerMenu.Choose();
+            player.name = name;
             int Wins = 0;
             
             while (player.health > 0)

@@ -129,7 +129,7 @@ namespace Combat
                 else if (col == width - 1) Write(BORDER_RIGHT_JOINT);
                 else Write(BORDER_HORIZONTAL);
             }
-            SetCursorPosition(0, 0);
+            SetCursorPosition(0, 2);
         }
 
         public void Clear()
